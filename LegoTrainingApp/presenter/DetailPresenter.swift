@@ -8,17 +8,19 @@
 
 import Foundation
 
-class DetailPresenter {
+struct DetailPresenter {
 
     weak var view: DetailViewController!
 
-    init(view: DetailViewController) {
-        self.view = view
+    private var useCase: DetailUseCase!
+
+    init(useCase: DetailUseCase) {
+        self.useCase = useCase
     }
 
     func loadDetail(by id: Int) {
-        Repository().retrieveList { response in
-            view.showDetail(from: response.first() { $0.id == id }!)
+        useCase.execute(request: id) { response in
+            view.showDetail(from: response)
         }
     }
 

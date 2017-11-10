@@ -11,7 +11,7 @@ import SDWebImage
 
 class MainViewController: UIViewController {
 
-    lazy var presenter: MainPresenter = MainPresenter(view: self)
+    lazy var presenter: MainPresenter = injector().mainPresenter
 
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
         configureNavigationBar()
         configureTableView()
         configureSegmentedControl()
+        injectView()
         loadImagesByFilter()
     }
 
@@ -61,6 +62,10 @@ class MainViewController: UIViewController {
 
     private func configureSegmentedControl() {
         segmented.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
+    }
+
+    private func injectView() {
+        presenter.view = self
     }
 
     @objc func selectionDidChange(_ sender: UISegmentedControl) {

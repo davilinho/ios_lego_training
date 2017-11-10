@@ -17,6 +17,12 @@
 		D54EEB6D1F9F98C4000E75EB /* LegoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EEB6C1F9F98C4000E75EB /* LegoItemCell.swift */; };
 		D54EEB701F9F9C1F000E75EB /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EEB6F1F9F9C1F000E75EB /* MainPresenter.swift */; };
 		D54EEB741F9F9C57000E75EB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EEB731F9F9C57000E75EB /* Repository.swift */; };
+		D56D79B71FB5F7680023FA8D /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D79B61FB5F7680023FA8D /* ServiceLocator.swift */; };
+		D56D79BC1FB5F8340023FA8D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D79BB1FB5F8340023FA8D /* Log.swift */; };
+		D56D79BE1FB5FA2E0023FA8D /* MainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D79BD1FB5FA2E0023FA8D /* MainUseCase.swift */; };
+		D56D79C01FB5FBB90023FA8D /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D79BF1FB5FBB90023FA8D /* DataSource.swift */; };
+		D56D79C21FB5FC1D0023FA8D /* DetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D79C11FB5FC1D0023FA8D /* DetailUseCase.swift */; };
+		D56D79C41FB600CA0023FA8D /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D79C31FB600CA0023FA8D /* UseCase.swift */; };
 		D5C189631F9F9FC400D1A3EC /* IMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C189621F9F9FC400D1A3EC /* IMainView.swift */; };
 		D5EBC91E1FA07AC600714866 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC91D1FA07AC600714866 /* Utils.swift */; };
 		D5EBC9201FA09D5E00714866 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC91F1FA09D5E00714866 /* DetailViewController.swift */; };
@@ -38,6 +44,12 @@
 		D54EEB6C1F9F98C4000E75EB /* LegoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoItemCell.swift; sourceTree = "<group>"; };
 		D54EEB6F1F9F9C1F000E75EB /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		D54EEB731F9F9C57000E75EB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		D56D79B61FB5F7680023FA8D /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		D56D79BB1FB5F8340023FA8D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		D56D79BD1FB5FA2E0023FA8D /* MainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCase.swift; sourceTree = "<group>"; };
+		D56D79BF1FB5FBB90023FA8D /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		D56D79C11FB5FC1D0023FA8D /* DetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCase.swift; sourceTree = "<group>"; };
+		D56D79C31FB600CA0023FA8D /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		D5C189621F9F9FC400D1A3EC /* IMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMainView.swift; sourceTree = "<group>"; };
 		D5EBC91D1FA07AC600714866 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D5EBC91F1FA09D5E00714866 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -96,14 +108,18 @@
 		D54EEB551F9F9567000E75EB /* LegoTrainingApp */ = {
 			isa = PBXGroup;
 			children = (
+				D54EEB621F9F9567000E75EB /* Info.plist */,
 				D54EEB561F9F9567000E75EB /* AppDelegate.swift */,
 				D54EEB5D1F9F9567000E75EB /* Assets.xcassets */,
-				D54EEB621F9F9567000E75EB /* Info.plist */,
+				D56D79B91FB5F7FF0023FA8D /* dataSource */,
+				D56D79B51FB5F73C0023FA8D /* di */,
 				D54EEB5F1F9F9567000E75EB /* LaunchScreen.storyboard */,
+				D56D79BA1FB5F8280023FA8D /* log */,
 				D54EEB5A1F9F9567000E75EB /* Main.storyboard */,
 				D54EEB681F9F9591000E75EB /* model */,
 				D54EEB6E1F9F9C14000E75EB /* presenter */,
 				D54EEB721F9F9C49000E75EB /* repository */,
+				D56D79B81FB5F7EA0023FA8D /* useCase */,
 				D54EEB711F9F9C3D000E75EB /* utils */,
 				D54EEB6B1F9F98AF000E75EB /* view */,
 			);
@@ -153,6 +169,40 @@
 				D54EEB731F9F9C57000E75EB /* Repository.swift */,
 			);
 			path = repository;
+			sourceTree = "<group>";
+		};
+		D56D79B51FB5F73C0023FA8D /* di */ = {
+			isa = PBXGroup;
+			children = (
+				D56D79B61FB5F7680023FA8D /* ServiceLocator.swift */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
+		D56D79B81FB5F7EA0023FA8D /* useCase */ = {
+			isa = PBXGroup;
+			children = (
+				D56D79BD1FB5FA2E0023FA8D /* MainUseCase.swift */,
+				D56D79C11FB5FC1D0023FA8D /* DetailUseCase.swift */,
+				D56D79C31FB600CA0023FA8D /* UseCase.swift */,
+			);
+			path = useCase;
+			sourceTree = "<group>";
+		};
+		D56D79B91FB5F7FF0023FA8D /* dataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D56D79BF1FB5FBB90023FA8D /* DataSource.swift */,
+			);
+			path = dataSource;
+			sourceTree = "<group>";
+		};
+		D56D79BA1FB5F8280023FA8D /* log */ = {
+			isa = PBXGroup;
+			children = (
+				D56D79BB1FB5F8340023FA8D /* Log.swift */,
+			);
+			path = log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,12 +328,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D56D79B71FB5F7680023FA8D /* ServiceLocator.swift in Sources */,
 				D5EBC9201FA09D5E00714866 /* DetailViewController.swift in Sources */,
+				D56D79BC1FB5F8340023FA8D /* Log.swift in Sources */,
+				D56D79C01FB5FBB90023FA8D /* DataSource.swift in Sources */,
 				D54EEB701F9F9C1F000E75EB /* MainPresenter.swift in Sources */,
 				D54EEB591F9F9567000E75EB /* MainViewController.swift in Sources */,
 				D5EBC9221FA0BCD000714866 /* DetailPresenter.swift in Sources */,
+				D56D79C41FB600CA0023FA8D /* UseCase.swift in Sources */,
 				D5C189631F9F9FC400D1A3EC /* IMainView.swift in Sources */,
 				D54EEB571F9F9567000E75EB /* AppDelegate.swift in Sources */,
+				D56D79BE1FB5FA2E0023FA8D /* MainUseCase.swift in Sources */,
+				D56D79C21FB5FC1D0023FA8D /* DetailUseCase.swift in Sources */,
 				D54EEB6A1F9F95C1000E75EB /* LegoItem.swift in Sources */,
 				D5EBC9241FA0BD6A00714866 /* IDetailView.swift in Sources */,
 				D54EEB6D1F9F98C4000E75EB /* LegoItemCell.swift in Sources */,

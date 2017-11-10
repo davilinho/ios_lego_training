@@ -11,7 +11,7 @@ import Toast_Swift
 
 class DetailViewController: UIViewController {
 
-    lazy var presenter: DetailPresenter = DetailPresenter(view: self)
+    lazy var presenter: DetailPresenter = injector().detailPresenter
 
     @IBOutlet weak var legoImage: UIImageView!
     @IBOutlet weak var legoText: UILabel!
@@ -21,11 +21,16 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        injectView()
         loadDetail()
     }
 
     @IBAction func didTapButton(_ sender: Any) {
         presenter.openInfoDetail(from: item)
+    }
+
+    private func injectView() {
+        presenter.view = self
     }
 
     private func loadDetail() {

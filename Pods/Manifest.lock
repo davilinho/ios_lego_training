@@ -1,17 +1,20 @@
 PODS:
+  - Log (1.0)
   - SDWebImage (4.1.2):
     - SDWebImage/Core (= 4.1.2)
   - SDWebImage/Core (4.1.2)
   - Toast-Swift (2.0.0)
 
 DEPENDENCIES:
+  - Log
   - SDWebImage (~> 4.0)
   - Toast-Swift (~> 2.0.0)
 
 SPEC CHECKSUMS:
+  Log: 5e368c9528db07517d18d2d04ff5fe2b6f5a1e21
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
 
-PODFILE CHECKSUM: 8b72c0f9be003b84cfd435aec455bc98d539e120
+PODFILE CHECKSUM: edcdff9d3973a74fdc6164fe1f84f84aed7fb6d0
 
 COCOAPODS: 1.2.1

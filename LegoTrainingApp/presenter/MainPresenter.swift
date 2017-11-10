@@ -8,22 +8,24 @@
 
 import Foundation
 
-class MainPresenter {
+struct MainPresenter {
 
     weak var view: MainViewController!
 
-    init (view: MainViewController) {
-        self.view = view
+    private var useCase: MainUseCase!
+
+    init (useCase: MainUseCase) {
+        self.useCase = useCase
     }
 
     func loadImages() {
-        Repository().retrieveList { response in
+        useCase.execute(request: nil) { response in
             view.showImages(list: response) { self.view.refreshList() }
         }
     }
 
     func filterImages(by type: LegoType) {
-        Repository().retrieveList { response in
+        useCase.execute(request: nil) { response in
             view.showImages(list: response.filter() { $0.type == type } ) { self.view.refreshList() }
         }
     }

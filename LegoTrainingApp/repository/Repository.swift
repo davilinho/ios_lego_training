@@ -8,19 +8,19 @@
 
 import Foundation
 
-class Repository {
+struct Repository {
+
+    private var dataSource: DataSource!
+
+    init(dataSource: DataSource) {
+        self.dataSource = dataSource
+    }
 
     func retrieveList(callback: ([LegoItem]) -> Void) {
-        callback(retrieveLegoList())
+        callback(dataSource.retrieveLegoList())
     }
 
-    private func retrieveLegoList() -> [LegoItem] {
-        return (1..<10).map { LegoItem(id: $0, text: "Lego \($0)",
-                                       url: "https://randomuser.me/api/portraits/lego/\($0).jpg",
-                                       type: getLegoType(id: $0)) }
-    }
-
-    private func getLegoType(id: Int) -> LegoType {
-        return id % 2 == 0 ? LegoType.withHat : LegoType.withoutHat
+    func retrieveDetail(by id: Int, callback: (LegoItem?) -> Void) {
+        callback(dataSource.retrieveLego(by: id))
     }
 }
