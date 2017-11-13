@@ -19,12 +19,19 @@ struct DetailPresenter {
     }
 
     func loadDetail(by id: Int) {
-        useCase.execute(request: id) { response in
-            view.showDetail(from: response)
-        }
+        useCase.execute(with: id, offlineCallback: {
+            self.view.showOfflineMessage()
+        }, onlineCallback: { response in
+            self.view.showDetail(from: response)
+        })
     }
 
-    func openInfoDetail(from item: LegoItem) {
-        view.showInfoDetail(from: "\(item.id)\n\(item.text)\n\(item.url)")
+    func openInfoDetail(from item: LegoItem?) {
+        guard item != nil else {
+            self.view.showOfflineMessage()
+            return
+        }
+        view.showInfoDetail(from: "\(String(describing: item?.id))\n\(String(describing: item?.text))" +
+            "\n\(String(describing: item?.url))")
     }
 }

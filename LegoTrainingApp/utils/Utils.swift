@@ -7,10 +7,17 @@
 //
 
 import Foundation
+import Alamofire
 
 struct Utils {
 
     static func mapLegoDescription(by legoType: LegoType) -> String {
         return LegoType.withHat == legoType ? "Con gorro" : "Sin gorro"
+    }
+}
+
+class Connectivity {
+    class func isConnectedToInternet() -> Bool {
+        return NetworkReachabilityManager()!.isReachable
     }
 }

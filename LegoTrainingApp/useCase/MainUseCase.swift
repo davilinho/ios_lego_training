@@ -10,16 +10,13 @@ import Foundation
 
 class MainUseCase: UseCase {
 
-    typealias T1 = Void
-    typealias T2 = [LegoItem]
-
     private var repository: Repository!
 
     init(repository: Repository) {
         self.repository = repository
     }
 
-    func execute(request: Void?, callback: ([LegoItem]) -> Void) {
+    internal func executeUseCaseImplementation(with request: Void?, callback: @escaping ([LegoItem]) -> Void) {
         repository.retrieveList(callback: callback)
     }
 }

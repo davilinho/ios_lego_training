@@ -28,6 +28,7 @@
 		D5EBC9201FA09D5E00714866 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC91F1FA09D5E00714866 /* DetailViewController.swift */; };
 		D5EBC9221FA0BCD000714866 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC9211FA0BCD000714866 /* DetailPresenter.swift */; };
 		D5EBC9241FA0BD6A00714866 /* IDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC9231FA0BD6A00714866 /* IDetailView.swift */; };
+		D5F1C3D71FB9D0B300E43E29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1C3D61FB9D0B300E43E29 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		D5EBC91F1FA09D5E00714866 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D5EBC9211FA0BCD000714866 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		D5EBC9231FA0BD6A00714866 /* IDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDetailView.swift; sourceTree = "<group>"; };
+		D5F1C3D61FB9D0B300E43E29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ECBE7620BBCFAC0183F86423 /* Pods-LegoTrainingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegoTrainingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LegoTrainingApp/Pods-LegoTrainingApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 				D5C189621F9F9FC400D1A3EC /* IMainView.swift */,
 				D5EBC91F1FA09D5E00714866 /* DetailViewController.swift */,
 				D5EBC9231FA0BD6A00714866 /* IDetailView.swift */,
+				D5F1C3D61FB9D0B300E43E29 /* ViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				D54EEB571F9F9567000E75EB /* AppDelegate.swift in Sources */,
 				D56D79BE1FB5FA2E0023FA8D /* MainUseCase.swift in Sources */,
 				D56D79C21FB5FC1D0023FA8D /* DetailUseCase.swift in Sources */,
+				D5F1C3D71FB9D0B300E43E29 /* ViewController.swift in Sources */,
 				D54EEB6A1F9F95C1000E75EB /* LegoItem.swift in Sources */,
 				D5EBC9241FA0BD6A00714866 /* IDetailView.swift in Sources */,
 				D54EEB6D1F9F98C4000E75EB /* LegoItemCell.swift in Sources */,

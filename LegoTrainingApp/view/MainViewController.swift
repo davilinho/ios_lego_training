@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class MainViewController: UIViewController {
+class MainViewController: ViewController {
 
     lazy var presenter: MainPresenter = injector().mainPresenter
 
@@ -34,6 +34,11 @@ class MainViewController: UIViewController {
         configureSegmentedControl()
         injectView()
         loadImagesByFilter()
+    }
+
+    override func showOfflineMessage() {
+        super.showOfflineMessage()
+        self.refreshControl.endRefreshing()
     }
 
     private func configureNavigationBar() {

@@ -9,7 +9,24 @@
 import Foundation
 
 protocol UseCase {
+
     associatedtype T1
     associatedtype T2
-    func execute(request: T1?, callback: (T2) -> Void)
+
+    func executeUseCaseImplementation(with request: T1?, callback: @escaping (T2) -> Void)
+}
+
+extension UseCase {
+
+    func execute(with request: T1?, offlineCallback: @escaping () -> Void, onlineCallback: @escaping (T2) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            if Connectivity.isConnectedToInternet() {
+                self.executeUseCaseImplementation(with: request) { response in
+                    DispatchQueue.main.async { onlineCallback(response) }
+                }
+            } else {
+                DispatchQueue.main.sync { offlineCallback() }
+            }
+        }
+    }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Toast_Swift
 
-class DetailViewController: UIViewController {
+class DetailViewController: ViewController {
 
     lazy var presenter: DetailPresenter = injector().detailPresenter
 
@@ -42,6 +42,7 @@ extension DetailViewController: IDetailView {
 
     func showDetail(from item: LegoItem) {
         self.item = item
+        self.title = item.text
         legoImage.sd_setImage(with: URL(string: item.url), completed: nil)
         legoText.text = Utils.mapLegoDescription(by: item.type)
     }

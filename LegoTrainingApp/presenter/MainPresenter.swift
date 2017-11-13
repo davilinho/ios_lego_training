@@ -19,14 +19,18 @@ struct MainPresenter {
     }
 
     func loadImages() {
-        useCase.execute(request: nil) { response in
-            view.showImages(list: response) { self.view.refreshList() }
-        }
+        useCase.execute(with: nil, offlineCallback: {
+            self.view.showOfflineMessage()
+        }, onlineCallback: { response in
+            self.view.showImages(list: response) { self.view.refreshList() }
+        })
     }
 
     func filterImages(by type: LegoType) {
-        useCase.execute(request: nil) { response in
-            view.showImages(list: response.filter() { $0.type == type } ) { self.view.refreshList() }
-        }
+        useCase.execute(with: nil, offlineCallback: {
+            self.view.showOfflineMessage()
+        }, onlineCallback: { response in
+            self.view.showImages(list: response.filter() { $0.type == type } ) { self.view.refreshList() }
+        })
     }
 }

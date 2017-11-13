@@ -8,6 +8,7 @@ target 'LegoTrainingApp' do
   # Pods for LegoTrainingApp
   pod 'SDWebImage', '~> 4.0'
   pod 'Toast-Swift', '~> 2.0.0'
-  pod 'Log'
+  pod 'Log', '~> 1.0'
+  pod 'Alamofire', '~> 4.5'
 
 end
